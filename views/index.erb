@@ -1,0 +1,20 @@
+<h1>Concert Tracker</h1>
+
+<h2>Add a band:</h2>
+
+<form action ="/bands" method="post">
+  <label for="name">Band name:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit">Add band</button>
+</form>
+
+<% if @bands.any? %>
+  <h3>Bands:</h3>
+
+  <ul>
+    <% @bands.each do |band| %>
+      <li><a href="/bands/<%= band.id %>"><%= band.name %></a></li>
+    <% end %> 
+  </ul> 
+
+  <% end %>
