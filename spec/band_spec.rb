@@ -8,7 +8,7 @@ describe(Band) do
     expect(band.name).to(eq("Gza"))
   end
 
-  it("validates presence of a band name") do 
+  it("validates the presence of a band name") do 
     band = Band.new({:name => ""})
     expect(band.save).to(eq(false))
   end
