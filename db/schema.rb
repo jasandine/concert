@@ -16,4 +16,17 @@ ActiveRecord::Schema.define(version: 20150204191923) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bands", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "bands_venues", force: :cascade do |t|
+    t.integer "band_id"
+    t.integer "venue_id"
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "name"
+  end
+
 end
